@@ -1,24 +1,13 @@
-# README
+# Container Template
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a template for configuring a basic Rails Application with SQLite using [Visual Studio Code Remote Containers](https://code.visualstudio.com/docs/remote/containers)
 
-Things you may want to cover:
+This repo will include the configurations for:
 
-* Ruby version
+* `Rails v 6` remote container with `ruby v 2.7.1`.
+* `Docker Compose` in case you want to run the project without remote containers.
+* Configuration for `solargraph` and `rubocop` vscode extensions.
 
-* System dependencies
+## Work to be done
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Add configuration for run with postgres and redis
