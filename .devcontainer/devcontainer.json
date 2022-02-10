@@ -1,0 +1,29 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.217.1/containers/docker-existing-dockerfile
+{
+  "name": "Rails Container Template",
+  "context": "..",
+  "dockerFile": "../Dockerfile",
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.profiles.linux": {
+      "bash": {
+        "path": "bash"
+      }
+    }
+  },
+  "extensions": [
+    "misogi.ruby-rubocop",
+    "bung87.rails",
+    "castwide.solargraph"
+  ],
+  "forwardPorts": [
+    3000
+  ],
+  "postStartCommand": "bin/setup",
+  "remoteUser": "rails",
+  "runArgs": [
+    "--env-file",
+    ".env"
+  ]
+}
