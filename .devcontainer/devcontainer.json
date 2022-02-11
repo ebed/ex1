@@ -2,8 +2,10 @@
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.217.1/containers/docker-existing-dockerfile
 {
   "name": "Rails Container Template",
+  // Sets the run context to one level up instead of the .devcontainer folder.
   "context": "..",
-  "dockerFile": "../Dockerfile",
+  "dockerFile": "../ci-cd/docker/Dockerfile",
+  // Set *default* container specific settings.json values on container create.
   "settings": {
     "terminal.integrated.defaultProfile.linux": "bash",
     "terminal.integrated.profiles.linux": {
@@ -12,6 +14,7 @@
       }
     }
   },
+  // Add the IDs of extensions you want installed when the container is created.
   "extensions": [
     "misogi.ruby-rubocop",
     "bung87.rails",
