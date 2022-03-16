@@ -10,6 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2022_03_16_135249) do
 
+  create_table "cities", force: :cascade do |t|
+    t.string "name"
+    t.integer "state_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["state_id"], name: "index_cities_on_state_id"
+  end
+
+  create_table "states", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "temperatures", force: :cascade do |t|
+    t.float "temp"
+    t.integer "weather_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["weather_id"], name: "index_temperatures_on_weather_id"
+  end
+
+  create_table "weathers", force: :cascade do |t|
+    t.integer "city_id", null: false
+    t.date "date"
+    t.float "lat"
+    t.float "lon"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["city_id"], name: "index_weathers_on_city_id"
+  end
+
+  add_foreign_key "cities", "states"
+  add_foreign_key "temperatures", "weathers"
+  add_foreign_key "weathers", "cities"
 end
